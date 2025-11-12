@@ -1,7 +1,7 @@
 using Microsoft.Win32;
 
 namespace CommonHelpers
-{
+{// Defines the data protocol for reading and writing strings on our stream.
     public class AntiCheatSettings : BaseSettings
     {
         public const String HelpURL = "https://steam-deck-tools.ayufan.dev/#anti-cheat-and-antivirus-software";

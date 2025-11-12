@@ -22,6 +22,7 @@ namespace SteamController
         Container components = new Container();
         NotifyIcon notifyIcon;
         StartupManager startupManager = new StartupManager(Title);
+        PipeController pipeController = new PipeController();
 
         Context context = new Context()
         {
@@ -187,6 +188,14 @@ namespace SteamController
             };
 
             SetupSteam(false);
+
+            new Thread(() =>
+            {
+                while (true)
+                {
+                    pipeController.Listen();
+                }
+            }).Start();
 
             context.Start();
 
